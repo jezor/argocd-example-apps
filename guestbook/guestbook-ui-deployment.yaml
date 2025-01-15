@@ -16,5 +16,8 @@ spec:
       containers:
       - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
         name: guestbook-ui
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsUser: 0
         ports:
         - containerPort: 8080
